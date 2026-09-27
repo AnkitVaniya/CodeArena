@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from jose import JWTError
 from sqlalchemy.orm import Session
 
+
 from app.core.security import (
     hash_password,
     verify_password,
