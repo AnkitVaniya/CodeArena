@@ -8,7 +8,6 @@ from app.models.user import User
 
 router = APIRouter(tags=["ml-features"])
 
-
 @router.get("/recommend/next-question")
 async def next_question(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     return await recommend_next_question(db, current_user.id, current_user.rating)
