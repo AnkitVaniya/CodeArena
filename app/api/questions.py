@@ -28,6 +28,7 @@ def _doc_to_out(doc: dict) -> dict:
     return doc
 
 
+
 def _has_already_solved(db: Session, user_id: int, question_id: str) -> bool:
     """A user's rating should only move once per question — on their first Accepted verdict."""
     prior_accept = (
@@ -40,6 +41,7 @@ def _has_already_solved(db: Session, user_id: int, question_id: str) -> bool:
         .first()
     )
     return prior_accept is not None
+
 
 
 @router.post("", response_model=QuestionAdminOut, status_code=201)
